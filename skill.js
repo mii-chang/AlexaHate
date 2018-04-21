@@ -56,7 +56,7 @@ const hateAnswer = [
 const handlers = {
   'LaunchRequest': function() {
     const speechOutput = 'んも〜どうしたの？';
-    this.emit(':ask', 'outputSpeech', 'HateIntent');
+    this.emit(':ask', speechOutput, 'HateIntent');
   },
   'HateIntent': function() {
     const intent = this.event.request.intent;
@@ -69,10 +69,10 @@ const handlers = {
     this.response.speak(speechOutput);
     this.emit(':responseReady');
   },
-  'outputSpeech': {
-    "type": "SSML",
-    "ssml": "<speak> <say-as interpret-as="んも〜">、どうしたの？</say-as></speak>"
-  },
+  // 'outputSpeech': {
+  //   "type": "SSML",
+  //   "ssml": "<speak> <say-as interpret-as="んも〜">、どうしたの？</say-as></speak>"
+  // },
   'AMAZON.HelpIntent': function() {
     const speechOutput = HELP_MESSAGE;
     const reprompt = HELP_REPROMPT;
