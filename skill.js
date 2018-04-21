@@ -60,7 +60,7 @@ const handlers = {
   },
   'HateIntent': function() {
     const intent = this.event.request.intent;
-    const factArr = data;
+    const factArr = hateAnswer;
     const factIndex = Math.floor(Math.random() * factArr.length);
     const randomFact = factArr[factIndex];
     const speechOutput = randomFact;
